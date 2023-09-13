@@ -257,9 +257,9 @@ namespace Sintaxis_2
                 {
                     match("*=");
                     Expresion();
-                    
+
                     resultado *= getValor(variable);
-                    resultado= stack.Pop();
+                    resultado = stack.Pop();
                     //weste como ejemplo
 
                 }
@@ -267,22 +267,22 @@ namespace Sintaxis_2
                 {
                     match("/=");
                     Expresion();
-                   
-                    
+
+
                     resultado /= getValor(variable);
-                    resultado=stack.Pop();
+                    resultado = stack.Pop();
 
 
-                   // resultado = getValor(variable) /= stack.Pop(); //ESTE LO AGREGUE
+                    // resultado = getValor(variable) /= stack.Pop(); //ESTE LO AGREGUE
                 }
                 else if (getContenido() == "%=")
                 {
                     match("%=");
                     Expresion();
-                    
+
                     resultado %= getValor(variable);
-                    resultado=stack.Pop();
-                   // resultado = getValor(variable) % stack.Pop(); //ESTE LO AGREGUE
+                    resultado = stack.Pop();
+                    // resultado = getValor(variable) % stack.Pop(); //ESTE LO AGREGUE
                 }
             }
             log.WriteLine(" = " + resultado);
@@ -384,8 +384,9 @@ namespace Sintaxis_2
             }
         }
         //If -> if (Condicion) BloqueInstrucciones | Instruccion (else BloqueInstrucciones | Instruccion)?
-        
-           private void If(bool ejecuta)
+
+
+        private void If(bool ejecuta)
         {
             match("if");
             match("(");
@@ -398,30 +399,36 @@ namespace Sintaxis_2
             }
             else
             {
+
                 Instruccion(evaluacion);
             }
             if (getContenido() == "else")
+
             {
                 match("else");
-
-                if (getContenido() == "{")
-
+                if (ejecuta == true)
                 {
-                    //BloqueInstrucciones(ejecuta);
-                    BloqueInstrucciones(!evaluacion);
-                }
-                else
-                {
-                    //Instruccion(ejecuta);
-                    Instruccion(!evaluacion);
+
+                    if (getContenido() == "{")
+
+                    {
+
+                        BloqueInstrucciones(!evaluacion);
+                    }
+                    else
+                    {
+
+                        Instruccion(!evaluacion);
+                    }
+
                 }
             }
 
         }
-            
-        
 
-        
+
+
+
         //Printf -> printf(cadena(,Identificador)?);
         private void Printf(bool ejecuta)
         {
@@ -436,8 +443,8 @@ namespace Sintaxis_2
                 comentario = comentario.Replace("\\t", " \t");
                 comentario = comentario.Replace("\"", "");
                 Console.Write(comentario);
-              
-               
+
+
 
             }
 
@@ -449,9 +456,9 @@ namespace Sintaxis_2
                 {
                     throw new Error("de sintaxis, la variable <" + getContenido() + "> no está declarada", log, linea, columna);
                 }
-               
 
-                Console.Write(" "+getValor(getContenido()));
+
+                Console.Write(" " + getValor(getContenido()));
                 match(Tipos.Identificador);
             }
 
@@ -474,18 +481,18 @@ namespace Sintaxis_2
             match(Tipos.Identificador);
             if (ejecuta)
             {
-                
+
                 string captura = " " + Console.ReadLine();
-               float resultado;
+                float resultado;
 
 
-                if(!float.TryParse(captura, out resultado))
+                if (!float.TryParse(captura, out resultado))
                 {
-                    throw new Error (" No es un dato numero  ", log, linea, columna);
+                    throw new Error(" No es un dato numero  ", log, linea, columna);
                 }
 
                 Modifica(variable, resultado);
-            
+
             }
             match(")");
             match(";");

@@ -1,5 +1,5 @@
 Autor: Daira Judith Servin Juárez 
-Fecha: 13/09/2023 01:10:47 p. m.
+Fecha: 13/09/2023 01:40:26 p. m.
 # | Caracter
 include | Identificador
 < | OperadorRelacional
@@ -127,67 +127,5 @@ printf | Identificador
 "Se ejecuta el segundo if del Else" | Cadena
 ) | Caracter
 ; | FinSentencia
-} | Fin
-b | Identificador
-b = ++ | IncrementoTermino
-; | FinSentencia
- = 20
-c | Identificador
-c = -- | IncrementoTermino
-; | FinSentencia
- = -1
-d | Identificador
-d = = | Asignacion
-3 | Numero
- 3; | FinSentencia
- = 3
-c | Identificador
-c = += | IncrementoTermino
-( | Caracter
-15 | Numero
- 15- | OperadorTermino
-b | Identificador
-) | Caracter
- -; | FinSentencia
- = -6
-b | Identificador
-b = -= | IncrementoTermino
-9 | Numero
- 9; | FinSentencia
- = 11
-printf | Identificador
-( | Caracter
-"\nEl valor de a = " | Cadena
-, | Caracter
-a | Identificador
-) | Caracter
-; | FinSentencia
-printf | Identificador
-( | Caracter
-"\nEl valor de b = " | Cadena
-, | Caracter
-b | Identificador
-) | Caracter
-; | FinSentencia
-printf | Identificador
-( | Caracter
-"\nEl valor de d = " | Cadena
-, | Caracter
-d | Identificador
-) | Caracter
-; | FinSentencia
-printf | Identificador
-( | Caracter
-"\nEl valor de c = " | Cadena
-, | Caracter
-c | Identificador
-) | Caracter
-; | FinSentencia
------------------
-V a r i a b l e s
------------------
-a Float = 70
-b Float = 11
-c Float = -6
-d Float = 3
------------------
+else{ | Inicio
+Error: de sintaxis, la variable <else{> no está declarada en la linea 29 columna 18
