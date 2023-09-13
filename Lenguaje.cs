@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 /*
 
     Requerimiento 1: Mensajes del printf deben salir sin comillas 
-                     Incluir \n y \t como secuencias de escape    
+                     Incluir \n y \t como secuencias de escape
+                         
     Requerimiento 2: Agregar el % al PorFactor   
                      Modificar el valor de una variable con ++,--,+=,-=,*=,/=.%= 
 
