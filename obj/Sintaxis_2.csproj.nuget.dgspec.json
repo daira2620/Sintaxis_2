@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "B:\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj": {}
+    "b:\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj": {}
   },
   "projects": {
-    "B:\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj": {
+    "b:\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "B:\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj",
+        "projectUniqueName": "b:\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj",
         "projectName": "Sintaxis_2",
-        "projectPath": "B:\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj",
+        "projectPath": "b:\\Sintaxis_2\\Sintaxis_2\\Sintaxis_2.csproj",
         "packagesPath": "C:\\Users\\Daira Servin\\.nuget\\packages\\",
-        "outputPath": "B:\\Sintaxis_2\\Sintaxis_2\\obj\\",
+        "outputPath": "b:\\Sintaxis_2\\Sintaxis_2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Daira Servin\\AppData\\Roaming\\NuGet\\NuGet.Config"
