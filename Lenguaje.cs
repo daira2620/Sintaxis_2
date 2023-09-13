@@ -391,8 +391,10 @@ namespace Sintaxis_2
         {
             match("if");
             match("(");
-            bool evaluacion = Condicion() && ejecuta;
-            Console.WriteLine(evaluacion);
+            bool nueva=Condicion();
+            bool evaluacion = nueva && ejecuta;
+            
+            //Console.WriteLine(evaluacion);
             match(")");
             if (getContenido() == "{")
             {
@@ -407,22 +409,21 @@ namespace Sintaxis_2
 
             {
                 match("else");
-                if (ejecuta == true)
-                {
+               
 
                     if (getContenido() == "{")
 
                     {
 
-                        BloqueInstrucciones(!evaluacion);
+                        BloqueInstrucciones(!nueva && ejecuta);
                     }
                     else
                     {
 
-                        Instruccion(!evaluacion);
+                        Instruccion(!nueva && ejecuta);
                     }
 
-                }
+                
             }
 
         }

@@ -15,9 +15,9 @@ void main() // Funcion principal
 
         printf("\nc es par\t\tITQ \t");
         if (c==10)
-            printf("Se ejecuta el segundo If ",c);
+            printf("\nSe ejecuta el segundo If ",c);
         else
-            printf("else");
+            printf("\nelse");
 
         a = 70;
     }
@@ -26,7 +26,8 @@ void main() // Funcion principal
         printf("\nc es impar\tITQ\n");
         if(c==11)
             printf("Se ejecuta el segundo if del Else");
-            else{
+            else
+            {
                 a=0;
             }
     }
