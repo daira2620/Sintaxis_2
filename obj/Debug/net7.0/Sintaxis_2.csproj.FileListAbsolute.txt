@@ -1,0 +1,43 @@
+D:\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.csproj.AssemblyReference.cache
+D:\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.AssemblyInfoInputs.cache
+D:\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.AssemblyInfo.cs
+D:\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.csproj.CoreCompileInputs.cache
+D:\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.dll
+D:\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.pdb
+D:\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.exe
+D:\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.deps.json
+D:\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.runtimeconfig.json
+D:\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.dll
+D:\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.pdb
+D:\Sintaxis_2\obj\Debug\net7.0\refint\Sintaxis_2.dll
+D:\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.genruntimeconfig.cache
+D:\Sintaxis_2\obj\Debug\net7.0\ref\Sintaxis_2.dll
+B:\Sintaxis_2 (1)\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.exe
+B:\Sintaxis_2 (1)\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.deps.json
+B:\Sintaxis_2 (1)\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.runtimeconfig.json
+B:\Sintaxis_2 (1)\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.dll
+B:\Sintaxis_2 (1)\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.pdb
+B:\Sintaxis_2 (1)\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.GeneratedMSBuildEditorConfig.editorconfig
+B:\Sintaxis_2 (1)\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.AssemblyInfoInputs.cache
+B:\Sintaxis_2 (1)\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.AssemblyInfo.cs
+B:\Sintaxis_2 (1)\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.csproj.CoreCompileInputs.cache
+B:\Sintaxis_2 (1)\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.dll
+B:\Sintaxis_2 (1)\Sintaxis_2\obj\Debug\net7.0\refint\Sintaxis_2.dll
+B:\Sintaxis_2 (1)\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.pdb
+B:\Sintaxis_2 (1)\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.genruntimeconfig.cache
+B:\Sintaxis_2 (1)\Sintaxis_2\obj\Debug\net7.0\ref\Sintaxis_2.dll
+B:\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.exe
+B:\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.deps.json
+B:\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.runtimeconfig.json
+B:\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.dll
+B:\Sintaxis_2\Sintaxis_2\bin\Debug\net7.0\Sintaxis_2.pdb
+B:\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.GeneratedMSBuildEditorConfig.editorconfig
+B:\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.AssemblyInfoInputs.cache
+B:\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.AssemblyInfo.cs
+B:\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.csproj.CoreCompileInputs.cache
+B:\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.dll
+B:\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\refint\Sintaxis_2.dll
+B:\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.pdb
+B:\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\Sintaxis_2.genruntimeconfig.cache
+B:\Sintaxis_2\Sintaxis_2\obj\Debug\net7.0\ref\Sintaxis_2.dll

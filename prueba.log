@@ -1,0 +1,8 @@
+Autor: Daira Judith Servin Juárez 
+Fecha: 28/08/2023 10:23:28 p. m.
+# | Caracter
+include | Identificador
+< | OperadorRelacional
+stdio | Identificador
+. | Caracter
+Error: de sintaxis, se espera un <>> en la linea 1 columna 17
