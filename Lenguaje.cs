@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 /*
+
     Requerimiento 1: Mensajes del printf deben salir sin comillas 
                      Incluir \n y \t como secuencias de escape    
     Requerimiento 2: Agregar el % al PorFactor   
@@ -383,16 +384,9 @@ namespace Sintaxis_2
             }
         }
         //If -> if (Condicion) BloqueInstrucciones | Instruccion (else BloqueInstrucciones | Instruccion)?
-        private void If(bool ejecuta)
+        
+           private void If(bool ejecuta)
         {
-            bool condielse=true;
-            bool condif=true;
-            
-
-            if(condif==true){
-
-            
-
             match("if");
             match("(");
             bool evaluacion = Condicion() && ejecuta;
@@ -401,19 +395,13 @@ namespace Sintaxis_2
             if (getContenido() == "{")
             {
                 BloqueInstrucciones(evaluacion);
-
             }
             else
             {
                 Instruccion(evaluacion);
             }
-            condelse=false;
-
-        }
-        else if(condif==false){
             if (getContenido() == "else")
             {
-                
                 match("else");
 
                 if (getContenido() == "{")
@@ -421,7 +409,6 @@ namespace Sintaxis_2
                 {
                     //BloqueInstrucciones(ejecuta);
                     BloqueInstrucciones(!evaluacion);
-                    
                 }
                 else
                 {
@@ -429,10 +416,12 @@ namespace Sintaxis_2
                     Instruccion(!evaluacion);
                 }
             }
-            
-        }
 
         }
+            
+        
+
+        
         //Printf -> printf(cadena(,Identificador)?);
         private void Printf(bool ejecuta)
         {
