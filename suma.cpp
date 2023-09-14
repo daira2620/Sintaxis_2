@@ -2,6 +2,7 @@
 #include<math.h>
 #include<iostream>
 
+
 float a,b,c,d;
 
 void main() // Funcion principal

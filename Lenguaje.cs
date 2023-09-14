@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 
 /*
-
     Requerimiento 1: Mensajes del printf deben salir sin comillas 
                      Incluir \n y \t como secuencias de escape
                          

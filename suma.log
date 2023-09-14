@@ -1,5 +1,5 @@
 Autor: Daira Judith Servin Juárez 
-Fecha: 13/09/2023 03:08:45 p. m.
+Fecha: 14/09/2023 01:31:23 p. m.
 # | Caracter
 include | Identificador
 < | OperadorRelacional
@@ -143,7 +143,7 @@ b = ++ | IncrementoTermino
 c | Identificador
 c = -- | IncrementoTermino
 ; | FinSentencia
- = 19
+ = 10
 d | Identificador
 d = = | Asignacion
 3 | Numero
@@ -157,7 +157,7 @@ c = += | IncrementoTermino
 b | Identificador
 ) | Caracter
  -; | FinSentencia
- = 14
+ = 5
 b | Identificador
 b = -= | IncrementoTermino
 9 | Numero
@@ -194,8 +194,8 @@ c | Identificador
 -----------------
 V a r i a b l e s
 -----------------
-a Float = 70
+a Float = 61
 b Float = 11
-c Float = 14
+c Float = 5
 d Float = 3
 -----------------
