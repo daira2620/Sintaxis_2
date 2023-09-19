@@ -258,9 +258,11 @@ namespace Sintaxis_2
                     match("*=");
                     Expresion();
 
-                    resultado *= getValor(variable);
+                    /*resultado *= getValor(variable);
                     resultado = stack.Pop();
-                    //weste como ejemplo
+                    */
+
+                    resultado = getValor(variable) * stack.Pop(); 
 
                 }
                 else if (getContenido() == "/=")
@@ -269,20 +271,22 @@ namespace Sintaxis_2
                     Expresion();
 
 
-                    resultado /= getValor(variable);
+                    /*resultado /= getValor(variable);
                     resultado = stack.Pop();
+                    */
 
-
-                    // resultado = getValor(variable) /= stack.Pop(); //ESTE LO AGREGUE
+                   resultado = getValor(variable) / stack.Pop(); 
                 }
                 else if (getContenido() == "%=")
                 {
                     match("%=");
                     Expresion();
 
-                    resultado %= getValor(variable);
+                    /*resultado %= getValor(variable);
                     resultado = stack.Pop();
-                    // resultado = getValor(variable) % stack.Pop(); //ESTE LO AGREGUE
+                    */
+                    
+                     resultado = getValor(variable) % stack.Pop();
                 }
             }
             log.WriteLine(" = " + resultado);
