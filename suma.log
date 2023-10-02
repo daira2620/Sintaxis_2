@@ -1,5 +1,5 @@
 Autor: Daira Judith Servin Juárez 
-Fecha: 19/09/2023 01:12:31 p. m.
+Fecha: 28/09/2023 01:24:19 p. m.
 # | Caracter
 include | Identificador
 < | OperadorRelacional
@@ -19,14 +19,14 @@ include | Identificador
 < | OperadorRelacional
 iostream | Identificador
 > | OperadorRelacional
-float | TipoDato
+char | TipoDato
 a | Identificador
-, | Caracter
+; | FinSentencia
+int | TipoDato
 b | Identificador
-, | Caracter
+; | FinSentencia
+float | TipoDato
 c | Identificador
-, | Caracter
-d | Identificador
 ; | FinSentencia
 void | Identificador
 main | Identificador
@@ -36,36 +36,30 @@ main | Identificador
 a | Identificador
 a = = | Asignacion
 ( | Caracter
-3 | Numero
- 3+ | OperadorTermino
-5 | Numero
- 5) | Caracter
- +* | OperadorFactor
-8 | Numero
- 8- | OperadorTermino
- *( | Caracter
-10 | Numero
- 10- | OperadorTermino
-4 | Numero
- 4) | Caracter
- -/ | OperadorFactor
-2 | Numero
- 2; | FinSentencia
- / - = 61
-b | Identificador
-b = = | Asignacion
-19 | Numero
- 19; | FinSentencia
- = 19
-printf | Identificador
-( | Caracter
-"Valor de c = " | Cadena
+char | TipoDato
 ) | Caracter
-; | FinSentencia
-scanf | Identificador
 ( | Caracter
-"%f" | Cadena
-, | Caracter
-& | Caracter
+( | Caracter
+char | TipoDato
+) | Caracter
+( | Caracter
 c | Identificador
 ) | Caracter
++ | OperadorTermino
+( | Caracter
+float | TipoDato
+) | Caracter
+( | Caracter
+b | Identificador
+) | Caracter
+) | Caracter
+ +; | FinSentencia
+ = 0
+} | Fin
+-----------------
+V a r i a b l e s
+-----------------
+a Char = 0
+b Int = 0
+c Float = 0
+-----------------

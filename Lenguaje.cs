@@ -1,25 +1,27 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 /*
-    Requerimiento 1: Mensajes del printf deben salir sin comillas 
-                     Incluir \n y \t como secuencias de escape
-                         
-    Requerimiento 2: Agregar el % al PorFactor   
-                     Modificar el valor de una variable con ++,--,+=,-=,*=,/=.%= 
 
-    Requerimiento 3: Cada vez que se haga un match(Tipos.Identificador) verificar el
-                     uso de la variable 
-                     Incremento(), Printf(), Factor() y usar getValor y Modifica
-                     
-                     Levantar una excepcion en scanf() cuando se capture un string
-                     verificar que si se capture un numero 
-                     
-    Requerimiento 4: Implementar la ejecución del ELSE 
+    Requerimiento 1: Implementar la ejecucion del while----------------------->
+
+    Requerimiento 2: Implementar la ejecicion del do - while ----------------->
+
+    Requerimiento 3: Implementar la ejecucion del for ------------------------>
+    --->para que se ejecuten en la simulacion 
+    en el incremento tambien marcar errores semanticos
+
+    Requerimiento 4: Marcar errores semánticos(se hace en asignacion)--------->
+
+    Requerimiento 5: CAST ---------------------------------------------------->
 */
 
+
+//tres tipo de datos verifiar cual es el mayor 
+//resultado y expresion comparar 
 
 
 namespace Sintaxis_2
@@ -28,15 +30,19 @@ namespace Sintaxis_2
     {
         List<Variable> lista;
         Stack<float> stack;
+
+        Variable.TiposDatos tipoDatoExpresion;
         public Lenguaje()
         {
             lista = new List<Variable>();
             stack = new Stack<float>();
+            tipoDatoExpresion = Variable.TiposDatos.Char;
         }
         public Lenguaje(string nombre) : base(nombre)
         {
             lista = new List<Variable>();
             stack = new Stack<float>();
+            tipoDatoExpresion = Variable.TiposDatos.Char;
         }
 
         //Programa  -> Librerias? Variables? Main
@@ -97,6 +103,33 @@ namespace Sintaxis_2
                 }
             }
             return 0;
+        }
+        private Variable.TiposDatos getTipo(string nombre)
+        {
+            foreach (Variable v in lista)
+            {
+                if (v.getNombre() == nombre)
+                {
+                    return v.getTiposDatos();
+                }
+            }
+            return Variable.TiposDatos.Char;
+        }
+        private Variable.TiposDatos getTipo(float resultado)
+        {
+             if (resultado % 1 != 0)
+            {
+                return Variable.TiposDatos.Float;
+            }
+            else if (resultado < 256)
+            {
+                return Variable.TiposDatos.Char;
+            }
+            else if (resultado < 65536)
+            {
+                return Variable.TiposDatos.Int;
+            }
+            return Variable.TiposDatos.Float;
         }
         // Libreria -> #include<Identificador(.h)?>
         private void Libreria()
@@ -208,10 +241,13 @@ namespace Sintaxis_2
                 Asignacion(ejecuta);
             }
         }
+
+
         //Asignacion -> identificador = Expresion;
         private void Asignacion(bool ejecuta)
         {
             float resultado = 0;
+            tipoDatoExpresion = Variable.TiposDatos.Char;
             if (!Existe(getContenido()))
             {
                 throw new Error("de sintaxis, la variable <" + getContenido() + "> no está declarada", log, linea, columna);
@@ -232,104 +268,137 @@ namespace Sintaxis_2
                     match("++");
                     resultado = getValor(variable) + 1;
                 }
-                else if (getContenido() == "--")
+                else
                 {
                     match("--");
                     resultado = getValor(variable) - 1;
                 }
-                else if (getContenido() == "+=")
+            }
+            else if (getClasificacion() == Tipos.IncrementoFactor)
+            {
+                resultado = getValor(variable);
+                if (getContenido() == "+=")
                 {
                     match("+=");
                     Expresion();
-                    resultado = getValor(variable) + stack.Pop();
+                    resultado += stack.Pop();
                 }
                 else if (getContenido() == "-=")
                 {
                     match("-=");
                     Expresion();
-                    resultado = getValor(variable) - stack.Pop();
+                    resultado -= stack.Pop();
                 }
-            }
-            else
-            {
-
-                if (getContenido() == "*=")
+                else if (getContenido() == "*=")
                 {
                     match("*=");
                     Expresion();
-
-                    /*resultado *= getValor(variable);
-                    resultado = stack.Pop();
-                    */
-
-                    resultado = getValor(variable) * stack.Pop(); 
-
+                    resultado *= stack.Pop();
                 }
                 else if (getContenido() == "/=")
                 {
                     match("/=");
                     Expresion();
-
-
-                    /*resultado /= getValor(variable);
-                    resultado = stack.Pop();
-                    */
-
-                   resultado = getValor(variable) / stack.Pop(); 
+                    resultado /= stack.Pop();
                 }
                 else if (getContenido() == "%=")
                 {
                     match("%=");
                     Expresion();
-
-                    /*resultado %= getValor(variable);
-                    resultado = stack.Pop();
-                    */
-                    
-                     resultado = getValor(variable) % stack.Pop();
+                    resultado %= stack.Pop();
                 }
             }
-            log.WriteLine(" = " + resultado);
+              log.WriteLine(" = " + resultado);
             if (ejecuta)
             {
-                Modifica(variable, resultado);
+                Variable.TiposDatos tipoDatoVariable  = getTipo(variable);
+                Variable.TiposDatos tipoDatoResultado = getTipo(resultado);
+                
+                Console.WriteLine(variable + " = "+tipoDatoVariable);
+                Console.WriteLine(resultado + " = "+tipoDatoResultado);
+                Console.WriteLine("expresion = "+tipoDatoExpresion);
+
+                //Variable.TiposDatos tipoDatoMayor = 
+
+                if (tipoDatoVariable >= tipoDatoResultado)
+                {
+                    Modifica(variable,resultado);                   
+                }
+                else
+                {
+                    throw new Error("de semantica, no se puede asignar in <" + tipoDatoResultado + "> a un <"+ tipoDatoVariable + ">", log, linea, columna);
+                }
             }
             match(";");
         }
         //While -> while(Condicion) BloqueInstrucciones | Instruccion
         private void While(bool ejecuta)
         {
-            match("while");
+            //*****pendiente no se como? 
+             match("while");
             match("(");
-            Condicion();
-            match(")");
-            if (getContenido() == "{")
+            int inicia = Caracter;
+            int lineaInicio = linea;
+            //bool resultado;
+            int longVariable = getContenido().Length;
+            do
             {
-                BloqueInstrucciones(ejecuta);
+                ejecuta = Condicion() && ejecuta;
+                match(")");
+                if (getContenido() == "{")
+                {
+                    Bloque_instrucciones(ejecuta);
+                }
+                else
+                {
+                    Instruccion(ejecuta);
+                }
+                if (ejecuta)
+                {
+                    archivo.DiscardBufferedData();
+                    Caracter = inicia - longVariable - 1;
+                    archivo.BaseStream.Seek(Caracter, SeekOrigin.Begin);
+                    NextToken();
+                    int linea = lineaInicio;
+                }
             }
-            else
-            {
-                Instruccion(ejecuta);
-            }
+            while (ejecuta);
 
         }
         //Do -> do BloqueInstrucciones | Instruccion while(Condicion)
         private void Do(bool ejecuta)
         {
-            match("do");
-            if (getContenido() == "{")
+           //pendiente ** no se ?
+            int inicia = Caracter;
+            int lineaInicio = linea;
+            bool resultado;
+            int longVariable = getContenido().Length;
+            do
             {
-                BloqueInstrucciones(ejecuta);
+                match("do");
+                if (getContenido() == "{")
+                {
+                    Bloque_instrucciones(ejecuta);
+                }
+                else
+                {
+                    Instruccion(ejecuta);
+                }
+                match("while");
+                match("(");
+                resultado = !Condicion() && ejecuta;
+                match(")");
+                match(";");
+                if (resultado)
+                {
+                    archivo.DiscardBufferedData();
+                    Caracter = inicia - longVariable - 1;
+                    archivo.BaseStream.Seek(Caracter, SeekOrigin.Begin);
+                    NextToken();
+                    int linea = lineaInicio;
+                }
             }
-            else
-            {
-                Instruccion(ejecuta);
-            }
-            match("while");
-            match("(");
-            Condicion();
-            match(")");
-            match(";");
+            while (resultado);
         }
         //For -> for(Asignacion Condicion; Incremento) BloqueInstrucciones | Instruccion
         private void For(bool ejecuta)
@@ -337,18 +406,40 @@ namespace Sintaxis_2
             match("for");
             match("(");
             Asignacion(ejecuta);
-            Condicion();
-            match(";");
-            Incremento(ejecuta);
-            match(")");
-            if (getContenido() == "{")
+
+            int inicia = caracter;
+            int lineaInicio = linea;
+            float resultado = 0;
+            string variable = getContenido();
+
+            log.WriteLine("For: " + variable);
+
+            do
             {
-                BloqueInstrucciones(ejecuta);
+                ejecuta = Condicion() && ejecuta;
+                match(";");
+                resultado = Incremento();
+                match(")");
+                if (getContenido() == "{")
+                {
+                    BloqueInstrucciones(ejecuta);
+                }
+                else
+                {
+                    Instruccion(ejecuta);
+                }
+                if (ejecuta)
+                {
+                    Modifica(variable, resultado);
+                    archivo.DiscardBufferedData();
+                    caracter = inicia - variable.Length - 1;
+                    archivo.BaseStream.Seek(caracter, SeekOrigin.Begin);
+                    nextToken();
+                    linea = lineaInicio;
+                }
+
             }
-            else
-            {
-                Instruccion(ejecuta);
-            }
+            while (ejecuta);
         }
         //Incremento -> Identificador ++ | --
         private void Incremento(bool ejecuta)
@@ -370,6 +461,7 @@ namespace Sintaxis_2
         //Condicion -> Expresion OperadorRelacional Expresion
         private bool Condicion()
         {
+           
             Expresion();
             string operador = getContenido();
             match(Tipos.OperadorRelacional);
@@ -379,14 +471,15 @@ namespace Sintaxis_2
 
             switch (operador)
             {
-                case "==": return R2 == R1;
-                case ">": return R2 > R1;
-                case ">=": return R2 >= R1;
-                case "<": return R2 < R1;
-                case "<=": return R2 <= R1;
-                default: return R2 != R1;
+                case "==" : return R2==R1;
+                case ">"  : return R2>R1;
+                case ">=" : return R2>=R1;
+                case "<"  : return R2<R1;
+                case "<=" : return R2<=R1;
+                default   : return R2!=R1;
             }
         }
+        
         //If -> if (Condicion) BloqueInstrucciones | Instruccion (else BloqueInstrucciones | Instruccion)?
 
 
@@ -394,9 +487,9 @@ namespace Sintaxis_2
         {
             match("if");
             match("(");
-            bool nueva=Condicion();
+            bool nueva = Condicion();
             bool evaluacion = nueva && ejecuta;
-            
+
             //Console.WriteLine(evaluacion);
             match(")");
             if (getContenido() == "{")
@@ -412,21 +505,19 @@ namespace Sintaxis_2
 
             {
                 match("else");
-               
 
-                    if (getContenido() == "{")
 
-                    {
+                if (getContenido() == "{")
 
-                        BloqueInstrucciones(!nueva && ejecuta);
-                    }
-                    else
-                    {
+                {
 
-                        Instruccion(!nueva && ejecuta);
-                    }
+                    BloqueInstrucciones(!nueva && ejecuta);
+                }
+                else
+                {
 
-                
+                    Instruccion(!nueva && ejecuta);
+                }
             }
 
         }
@@ -462,8 +553,7 @@ namespace Sintaxis_2
                     throw new Error("de sintaxis, la variable <" + getContenido() + "> no está declarada", log, linea, columna);
                 }
 
-
-                Console.Write(" " + getValor(getContenido()));
+              Console.Write(" " + getValor(getContenido()));
                 match(Tipos.Identificador);
             }
 
@@ -493,7 +583,7 @@ namespace Sintaxis_2
 
                 if (!float.TryParse(captura, out resultado))
                 {
-                    throw new Error(" No es un dato numero  ", log, linea, columna);
+                    throw new Error(" No es un dato numerico  ", log, linea, columna);
                 }
 
                 Modifica(variable, resultado);
@@ -558,10 +648,9 @@ namespace Sintaxis_2
                 else if (operador == "/")
                 {
                     stack.Push(R1 / R2);
-
                 }
                 else
-                    stack.Push(R1 % R2); //ESTE LO AGREGUE 
+                    stack.Push(R1 % R2);
             }
         }
         //Factor -> numero | identificador | (Expresion)
@@ -569,8 +658,12 @@ namespace Sintaxis_2
         {
             if (getClasificacion() == Tipos.Numero)
             {
-                log.Write(" " + getContenido());
+               log.Write(" " + getContenido());
                 stack.Push(float.Parse(getContenido()));
+                if (tipoDatoExpresion < getTipo(float.Parse(getContenido())))
+                {
+                    tipoDatoExpresion = getTipo(float.Parse(getContenido()));
+                }
                 match(Tipos.Numero);
             }
             else if (getClasificacion() == Tipos.Identificador)
@@ -580,14 +673,86 @@ namespace Sintaxis_2
                     throw new Error("de sintaxis, la variable <" + getContenido() + "> no está declarada", log, linea, columna);
                 }
                 stack.Push(getValor(getContenido()));
+                if (tipoDatoExpresion < getTipo(getContenido()))
+                {
+                    tipoDatoExpresion = getTipo(getContenido());
+                }
                 match(Tipos.Identificador);
             }
             else
             {
+                bool huboCast = false;
+                Variable.TiposDatos tipoDatoCast = Variable.TiposDatos.Char;
                 match("(");
+                if (getClasificacion() == Tipos.TipoDato)
+                {
+                    huboCast = true;
+                    switch (getContenido())
+                    {
+                        case "int"  : tipoDatoCast = Variable.TiposDatos.Int;
+                                        break;
+                        case "float": tipoDatoCast = Variable.TiposDatos.Float;
+                                        break;
+                    }
+                    match(Tipos.TipoDato);
+                    match(")");
+                    match("(");
+                }
                 Expresion();
                 match(")");
+                if (huboCast)
+                {
+                    //tipoDatoExpresion = tipoDatoCast;
+                   // stack.Push(castea(stack.Pop(),tipoDatoCast));
+                    //+++++++++++++++++++++++++++++++++++++++++++++++++++++
+                   
+                    switch (tipoVariable)
+                    {
+                        case "char":
+                            tipoDatoExpresion = Variable.TipoVariable.Char;
+                            stack.Push((float)Math.Round(stack.Pop()) % 256);
+                            WriteLine("POP");
+                            WriteLine("PUSH");
+                            break;
+                        case "int":
+                            tipoDatoExpresion = Variable.TipoVariable.Int;
+                            stack.Push((float)Math.Round(stack.Pop()) % 6552);
+                            WriteLine("POP");
+                            WriteLine("PUSH");
+                            break;
+             
+                      default:
+                            tipoDatoExpresion = Variable.TipoVariable.Float;
+                            break;
+                    }
+
+                }
+                
             }
         }
+        float castea( float resultado, Variable.TiposDatos tipoDato)
+        {
+            return 0;
+        }
+          
+    
+    
+    // en el 4 cual de los tres datos es mayor y levantar la excepcion 
+
+
+     //en el 5
+        //metodo castea para evitar que se levante una excepcion 
+        //cuando el resultado exceda el tipo de dato se hace cast
+        
+        //dividir y sacar el residuo  para 
+        //char%256
+        //int %6552
+        //de lo contrario el resultado es el mismo 
+        //lo que va en el residuo es lo que vas a poner 
+
+
+   
+     //incremento solo ++ y --
+    
     }
 }
