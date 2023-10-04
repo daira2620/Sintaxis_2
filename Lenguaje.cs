@@ -355,8 +355,6 @@ namespace Sintaxis_2
             match("(");
             int inicia = caracter;
             int lineaInicio = linea;
-
-            //bool resultado;
             int variable = getContenido();
             do
             {
@@ -364,7 +362,7 @@ namespace Sintaxis_2
                 match(")");
                 if (getContenido() == "{")
                 {
-                    Bloque_instrucciones(ejecuta);
+                    BloqueInstrucciones(ejecuta);
                 }
                 else
                 {
@@ -736,11 +734,12 @@ namespace Sintaxis_2
                     throw new Error("de sintaxis, la variable <" + getContenido() + "> no está declarada", log, linea, columna);
                 }
                 stack.Push(getValor(getContenido()));
+                match(Tipos.Identificador);
                 if (tipoDatoExpresion < getTipo(getContenido()))
                 {
                     tipoDatoExpresion = getTipo(getContenido());
                 }
-                match(Tipos.Identificador);
+               
             }
             else
             {
@@ -752,10 +751,8 @@ namespace Sintaxis_2
                     huboCast = true;
                     switch (getContenido())
                     {
-                        case "int"  : tipoDatoCast = Variable.TiposDatos.Int;
-                                        break;
-                        case "float": tipoDatoCast = Variable.TiposDatos.Float;
-                                        break;
+                        case "int"  : tipoDatoCast = Variable.TiposDatos.Int; break;
+                        case "float": tipoDatoCast = Variable.TiposDatos.Float;break;
                     }
                     match(Tipos.TipoDato);
                     match(")");
@@ -763,10 +760,30 @@ namespace Sintaxis_2
                 }
                 Expresion();
                 match(")");
-                if (huboCast)
+               /* if (huboCast)
                 {
                     tipoDatoExpresion = tipoDatoCast;
                     stack.Push(castea(stack.Pop(),tipoDatoCast));
+                }
+                */
+                if (huboCast)
+                {
+                    switch (tipoVariable)
+                    {
+                        case "char":
+                            tipoDatoExpresion = Variable.TipoVariable.Char;
+                            stack.Push((float)Math.Round(stack.Pop()) % 256);
+                            break;
+                        case "int":
+                            tipoDatoExpresion = Variable.TipoVariable.Int;
+                            stack.Push((float)Math.Round(stack.Pop()) % 65526);
+                            break;
+             
+                      default:
+                            tipoDatoExpresion = Variable.TipoVariable.Float;
+                            break;
+                    }
+
                 }
             }
         }
