@@ -1,5 +1,5 @@
 Autor: Daira Judith Servin Juárez 
-Fecha: 28/09/2023 01:24:19 p. m.
+Fecha: 06/10/2023 12:23:49 a. m.
 # | Caracter
 include | Identificador
 < | OperadorRelacional
@@ -20,46 +20,1164 @@ include | Identificador
 iostream | Identificador
 > | OperadorRelacional
 char | TipoDato
-a | Identificador
-; | FinSentencia
-int | TipoDato
-b | Identificador
-; | FinSentencia
-float | TipoDato
-c | Identificador
+altura | Identificador
+, | Caracter
+i | Identificador
+, | Caracter
+j | Identificador
+, | Caracter
+k | Identificador
 ; | FinSentencia
 void | Identificador
 main | Identificador
 ( | Caracter
 ) | Caracter
 { | Inicio
-a | Identificador
-a = = | Asignacion
+printf | Identificador
 ( | Caracter
-char | TipoDato
+"\nAltura: " | Cadena
 ) | Caracter
+; | FinSentencia
+scanf | Identificador
 ( | Caracter
-( | Caracter
-char | TipoDato
+"&i" | Cadena
+, | Caracter
+& | Caracter
+altura | Identificador
 ) | Caracter
+; | FinSentencia
+printf | Identificador
 ( | Caracter
-c | Identificador
+"\nfor:\n" | Cadena
 ) | Caracter
-+ | OperadorTermino
+; | FinSentencia
+for | Ciclo
 ( | Caracter
-float | TipoDato
+i | Identificador
+i = = | Asignacion
+1 | Numero
+ 1; | FinSentencia
+ = 1
+i | Identificador
+For: i
+<= | OperadorRelacional
+altura | Identificador
+; | FinSentencia
+i | Identificador
+++ | IncrementoTermino
 ) | Caracter
+{ | Inicio
+for | Ciclo
 ( | Caracter
-b | Identificador
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+j | Identificador
+For: j
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
 ) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+i | Identificador
+<= | OperadorRelacional
+altura | Identificador
+; | FinSentencia
+i | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+for | Ciclo
+( | Caracter
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+j | Identificador
+For: j
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+i | Identificador
+<= | OperadorRelacional
+altura | Identificador
+; | FinSentencia
+i | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+for | Ciclo
+( | Caracter
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+j | Identificador
+For: j
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+i | Identificador
+<= | OperadorRelacional
+altura | Identificador
+; | FinSentencia
+i | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+for | Ciclo
+( | Caracter
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+j | Identificador
+For: j
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+; | FinSentencia
+ +j | Identificador
+++ | IncrementoTermino
+) | Caracter
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+( | Caracter
+"\nwhile:\n" | Cadena
+) | Caracter
+; | FinSentencia
+i | Identificador
+i = = | Asignacion
+1 | Numero
+ 1; | FinSentencia
+ = 1
+while | Ciclo
+( | Caracter
+i | Identificador
+While: i
+<= | OperadorRelacional
+altura | Identificador
+) | Caracter
+{ | Inicio
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+while | Ciclo
+( | Caracter
+j | Identificador
+While: j
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 251
+} | Fin
+i | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 252
+} | Fin
+i | Identificador
+i = ++ | IncrementoTermino
+; | FinSentencia
+ = 2
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+i | Identificador
+<= | OperadorRelacional
+altura | Identificador
+) | Caracter
+{ | Inicio
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+while | Ciclo
+( | Caracter
+j | Identificador
+While: j
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 251
+} | Fin
+i | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 252
+} | Fin
+i | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 253
+} | Fin
+i | Identificador
+i = ++ | IncrementoTermino
+; | FinSentencia
+ = 3
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+i | Identificador
+<= | OperadorRelacional
+altura | Identificador
+) | Caracter
+{ | Inicio
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+while | Ciclo
+( | Caracter
+j | Identificador
+While: j
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 251
+} | Fin
+i | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 252
+} | Fin
+i | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 253
+} | Fin
+i | Identificador
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 254
+} | Fin
+i | Identificador
+i = ++ | IncrementoTermino
+; | FinSentencia
+ = 4
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+i | Identificador
+<= | OperadorRelacional
+altura | Identificador
+) | Caracter
+{ | Inicio
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+while | Ciclo
+( | Caracter
+j | Identificador
+While: j
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 254
+} | Fin
+i | Identificador
+i = ++ | IncrementoTermino
+; | FinSentencia
+ = 5
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+printf | Identificador
+( | Caracter
+"\ndo:\n" | Cadena
+) | Caracter
+; | FinSentencia
+i | Identificador
+i = = | Asignacion
+1 | Numero
+ 1; | FinSentencia
+ = 1
+do | Ciclo
+{ | Inicio
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+do | Ciclo
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 251
+} | Fin
+while | Ciclo
+( | Caracter
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
 ) | Caracter
  +; | FinSentencia
- = 0
+i | Identificador
+i = ++ | IncrementoTermino
+; | FinSentencia
+ = 2
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+while | Ciclo
+( | Caracter
+i | Identificador
+<= | OperadorRelacional
+altura | Identificador
+) | Caracter
+; | FinSentencia
+} | Fin
+{ | Inicio
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+do | Ciclo
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 251
+} | Fin
+while | Ciclo
+( | Caracter
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +; | FinSentencia
+i | Identificador
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 252
+} | Fin
+while | Ciclo
+( | Caracter
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +; | FinSentencia
+i | Identificador
+i = ++ | IncrementoTermino
+; | FinSentencia
+ = 3
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+while | Ciclo
+( | Caracter
+i | Identificador
+<= | OperadorRelacional
+altura | Identificador
+) | Caracter
+; | FinSentencia
+} | Fin
+{ | Inicio
+j | Identificador
+j = = | Asignacion
+250 | Numero
+ 250; | FinSentencia
+ = 250
+do | Ciclo
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 251
+} | Fin
+while | Ciclo
+( | Caracter
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +; | FinSentencia
+i | Identificador
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 252
+} | Fin
+while | Ciclo
+( | Caracter
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +; | FinSentencia
+i | Identificador
+{ | Inicio
+if | Condicion
+( | Caracter
+j | Identificador
+% | OperadorFactor
+2 | Numero
+ 2== | OperadorRelacional
+ %0 | Numero
+ 0) | Caracter
+printf | Identificador
+( | Caracter
+"-" | Cadena
+) | Caracter
+; | FinSentencia
+else | Condicion
+printf | Identificador
+( | Caracter
+"+" | Cadena
+) | Caracter
+; | FinSentencia
+j | Identificador
+j = ++ | IncrementoTermino
+; | FinSentencia
+ = 253
+} | Fin
+while | Ciclo
+( | Caracter
+j | Identificador
+< | OperadorRelacional
+250 | Numero
+ 250+ | OperadorTermino
+i | Identificador
+) | Caracter
+ +; | FinSentencia
+i | Identificador
+i = ++ | IncrementoTermino
+; | FinSentencia
+ = 4
+printf | Identificador
+( | Caracter
+"\n" | Cadena
+) | Caracter
+; | FinSentencia
+} | Fin
+while | Ciclo
+( | Caracter
+i | Identificador
+<= | OperadorRelacional
+altura | Identificador
+) | Caracter
+; | FinSentencia
 } | Fin
 -----------------
 V a r i a b l e s
 -----------------
-a Char = 0
-b Int = 0
-c Float = 0
+altura Char = 3
+i Char = 4
+j Char = 253
+k Char = 0
 -----------------
