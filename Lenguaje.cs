@@ -371,7 +371,7 @@ namespace Sintaxis_2
                 if (ejecuta)
                 {
                     archivo.DiscardBufferedData();
-                    caracter = inicia - longVariable - 1;
+                    caracter = inicia - variable.Length - 1;
                     archivo.BaseStream.Seek(caracter, SeekOrigin.Begin);
                     nextToken();
                     int linea = lineaInicio;
@@ -768,19 +768,19 @@ namespace Sintaxis_2
                 */
                 if (huboCast)
                 {
-                    switch (tipoVariable)
+                    switch (variable)
                     {
                         case "char":
-                            tipoDatoExpresion = Variable.TipoVariable.Char;
+                            tipoDatoExpresion = variable.Tipovariable.Char;
                             stack.Push((float)Math.Round(stack.Pop()) % 256);
                             break;
                         case "int":
-                            tipoDatoExpresion = Variable.TipoVariable.Int;
+                            tipoDatoExpresion = variable.Tipovariable.Int;
                             stack.Push((float)Math.Round(stack.Pop()) % 65526);
                             break;
              
                       default:
-                            tipoDatoExpresion = Variable.TipoVariable.Float;
+                            tipoDatoExpresion = variable.Tipovariable.Float;
                             break;
                     }
 
