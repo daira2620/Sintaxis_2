@@ -27,11 +27,11 @@ void main() // Funcion principal
     }
     printf("\nwhile:\n");
     i = 1;
-    while (i <= altura)
+    while ( i <= altura )
 
     {
         j = 250;
-        while (j < 250 + i)
+        while ( j < 250 + i )
 
         {
             if (j % 2 == 0)
@@ -55,8 +55,8 @@ void main() // Funcion principal
             else
                 printf("+");
             j++;
-        } while (j < 250 + i);
+        } while ( j < 250 + i );
         i++;
         printf("\n");
-    } while (i <= altura);
+    } while ( i <= altura );
 }

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
     Requerimiento 4: Marcar errores semánticos(se hace en asignacion)--------->ok
 
-    Requerimiento 5: CAST ---------------------------------------------------->
+    Requerimiento 5: CAST ---------------------------------------------------->0k
 */
 
 namespace Sintaxis_2
@@ -333,7 +333,7 @@ namespace Sintaxis_2
             }
             match(";");
         }
-        
+
         //While -> while(Condicion) BloqueInstrucciones | Instruccion
         private void While(bool ejecuta)
         {
@@ -404,7 +404,7 @@ namespace Sintaxis_2
                     caracter = inicia;
                     archivo.BaseStream.Seek(caracter, SeekOrigin.Begin);
                     nextToken();
-                     linea = lineaInicio;
+                    linea = lineaInicio;
                 }
             }
             while (ejecuta);
@@ -449,7 +449,7 @@ namespace Sintaxis_2
                     linea = lineaInicio;
 
                    Variable.TiposDatos tipoDatoVariable  = getTipo(variable);
-                Variable.TiposDatos tipoDatoResultado = getTipo(resultado);
+                   Variable.TiposDatos tipoDatoResultado = getTipo(resultado);
             
                 if (tipoDatoVariable >= tipoDatoResultado)
                 {
@@ -567,10 +567,6 @@ namespace Sintaxis_2
                 comentario = comentario.Replace("\\t", " \t");
                 comentario = comentario.Replace("\"", "");
                 Console.Write(comentario);
-
-
-            
-
             }
 
             match(Tipos.Cadena);

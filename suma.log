@@ -1,5 +1,5 @@
 Autor: Daira Judith Servin Juárez 
-Fecha: 06/10/2023 10:40:38 a. m.
+Fecha: 06/10/2023 12:24:43 p. m.
 # | Caracter
 include | Identificador
 < | OperadorRelacional
@@ -33,19 +33,16 @@ main | Identificador
 ( | Caracter
 ) | Caracter
 { | Inicio
-k | Identificador
-k = = | Asignacion
+printf | Identificador
 ( | Caracter
-int | TipoDato
-) | Caracter
-( | Caracter
-( | Caracter
-char | TipoDato
-) | Caracter
-( | Caracter
-1.5 | Numero
- 1.5) | Caracter
+"\nAltura: " | Cadena
 ) | Caracter
 ; | FinSentencia
- = 2
-Error: de semantica,no se puede asignar in  <Int> a un < Char> en la linea 11 columna 27
+scanf | Identificador
+( | Caracter
+"&i" | Cadena
+, | Caracter
+& | Caracter
+altura | Identificador
+) | Caracter
+Error:  de semantica, no se puede asignar in <Int> a un <Char> en la linea 14 columna 25
