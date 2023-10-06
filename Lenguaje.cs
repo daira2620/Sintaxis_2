@@ -4,13 +4,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-//scan f altura tipo char 
-//si se ingresa un 257 se hace un error de semantica 
-//256 ya debe de dar dos bites 
-//scan f tenga la excepcion de la captura 
-//llegar al while y guardar al inicio 
-//retar 5  letras del while  
-//o restar 2 letras del do 
 
 /*
 
@@ -21,15 +14,10 @@ using System.Threading.Tasks;
     Requerimiento 3: Implementar la ejecucion del for ------------------------> ok
     en el incremento tambien marcar errores semanticos
 
-    Requerimiento 4: Marcar errores semánticos(se hace en asignacion)--------->
+    Requerimiento 4: Marcar errores semánticos(se hace en asignacion)--------->ok
 
     Requerimiento 5: CAST ---------------------------------------------------->
 */
-
-
-//tres tipo de datos verifiar cual es el mayor 
-//resultado y expresion comparar 
-
 
 namespace Sintaxis_2
 {
@@ -325,8 +313,6 @@ namespace Sintaxis_2
                 //Console.WriteLine(resultado + " = "+tipoDatoResultado);
                 //Console.WriteLine("expresion = "+tipoDatoExpresion);
 
-                //Variable.TiposDatos tipoDatoMayor = 
-
                 if (tipoDatoVariable >= tipoDatoResultado)
                 {
                     Modifica(variable,resultado);                   
@@ -335,7 +321,7 @@ namespace Sintaxis_2
                 {
                     throw new Error("de semantica, no se puede asignar in <" + tipoDatoResultado + "> a un <"+ tipoDatoVariable + ">", log, linea, columna);
                 }
-               // aqui lo agregue 
+               
                 if(tipoDatoVariable >=tipoDatoExpresion)
                 {
                     Modifica(variable,resultado);
@@ -461,9 +447,6 @@ namespace Sintaxis_2
                     nextToken();
                     linea = lineaInicio;
 
-
-
-                  ///aqui lo agregue 
                    Variable.TiposDatos tipoDatoVariable  = getTipo(variable);
                 Variable.TiposDatos tipoDatoResultado = getTipo(resultado);
             
@@ -569,9 +552,6 @@ namespace Sintaxis_2
 
         }
 
-
-
-
         //Printf -> printf(cadena(,Identificador)?);
         private void Printf(bool ejecuta)
         {
@@ -634,8 +614,6 @@ namespace Sintaxis_2
                     throw new Error(" No es un dato numerico  ", log, linea, columna);
                 }
 
-  //h              
-             ///aqui lo agregue 
                 Variable.TiposDatos tipoDatoVariable  = getTipo(variable);
                 Variable.TiposDatos tipoDatoResultado = getTipo(resultado);
             
@@ -648,10 +626,6 @@ namespace Sintaxis_2
                 {
                     throw new Error(" de semantica, no se puede asignar in <" + tipoDatoResultado + "> a un <"+ tipoDatoVariable + ">", log, linea, columna);
                 }
-
-
-              
-
             }
             match(")");
             match(";");
@@ -744,7 +718,6 @@ namespace Sintaxis_2
                 }
                
             }
-            // aqui en el cast tengo error 
             else
             {
                 bool huboCast = false;
@@ -777,20 +750,23 @@ namespace Sintaxis_2
 
           if (tipoDato == Variable.TiposDatos.Char) 
           {
-            resultado=resultado%256;
-            return(char)resultado;
-            }
+            if (resultado%1>0)
+          
+            resultado=(float)Math.Round(resultado);
+            resultado=(char)resultado % 256;
+        
+           }
           
           else if (tipoDato == Variable.TiposDatos.Int)
            {
-             resultado=resultado%65556;
-            return(int)resultado;
-
+            if(resultado%1>0)
+            {
+            resultado=(float)Math.Round(resultado);
+             resultado=(int)resultado % 65556;
+            }
           }
           
-            return (resultado);
+            return resultado;
         }
-    }
-      
-}
-
+   }
+ }
