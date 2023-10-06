@@ -309,7 +309,7 @@ namespace Sintaxis_2
                 Variable.TiposDatos tipoDatoVariable  = getTipo(variable);
                 Variable.TiposDatos tipoDatoResultado = getTipo(resultado);
                 
-               // Console.WriteLine(variable + " = "+tipoDatoVariable);
+                //Console.WriteLine(variable + " = "+tipoDatoVariable);
                 //Console.WriteLine(resultado + " = "+tipoDatoResultado);
                 //Console.WriteLine("expresion = "+tipoDatoExpresion);
 
@@ -333,6 +333,7 @@ namespace Sintaxis_2
             }
             match(";");
         }
+        
         //While -> while(Condicion) BloqueInstrucciones | Instruccion
         private void While(bool ejecuta)
         {
