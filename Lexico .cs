@@ -62,18 +62,25 @@ namespace Sintaxis_2
         };
         protected StreamReader archivo;
         protected StreamWriter log;
+        protected StreamWriter asm; 
 
         protected int linea;
         protected int columna;
-
         protected int caracter;
+
+
         public Lexico()
         {
             linea = columna = caracter= 1;
             log = new StreamWriter("prueba.log");
+            asm= new StreamWriter("prueba.asm");    
+            log.AutoFlush = true;
+            asm.AutoFlush = true; 
             log.WriteLine("Autor: ");
             log.WriteLine("Fecha:  "+DateTime.Now);
-            log.AutoFlush = true;
+            asm.WriteLine(" ; Autor: ");
+            asm.WriteLine(" ;Fecha:  "+DateTime.Now);
+
             if (File.Exists("prueba.cpp"))
             {
                 archivo = new StreamReader("prueba.cpp");
@@ -87,9 +94,15 @@ namespace Sintaxis_2
         {
             linea = columna = caracter= 1;
             log = new StreamWriter(Path.GetFileNameWithoutExtension(nombre) + ".log");
+            asm = new StreamWriter(Path.GetFileNameWithoutExtension(nombre) + ".asm");
+            log.AutoFlush = true;
+            asm.AutoFlush = true;
+            
             log.WriteLine("Autor: Daira Judith Servin Juárez ");
             log.WriteLine("Fecha: "+DateTime.Now);
-            log.AutoFlush = true;
+            asm.WriteLine("; Autor: Daira Judith Servin Juárez ");
+            asm.WriteLine(" ; Fecha: "+DateTime.Now);
+
             if (Path.GetExtension(nombre) != ".cpp")
             {
                 throw new Error("El archivo " + nombre + " no tiene extension CPP", log, linea, columna);
@@ -108,6 +121,7 @@ namespace Sintaxis_2
         {
             archivo.Close();
             log.Close();
+            asm.Close();
         }
         private int Columna(char t)
         {
@@ -288,7 +302,7 @@ namespace Sintaxis_2
             }
             if (!FinArchivo())
             {
-                log.WriteLine(getContenido() + " | " + getClasificacion());
+               //modificacion (09/10) //log.WriteLine(getContenido() + " | " + getClasificacion());
             }
             if (Estado == E)
             {
