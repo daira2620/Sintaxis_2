@@ -10,10 +10,23 @@ void main() // Funcion principal
     //k = 1.5;
     // k = (int)((char)(1.5));
 
-    k = (3+5)-(10-4); // 2
-    
-    //*8 - (10-4)/2;
+/*
+    k=(3+5)*8-(10-4)/2; //61
+    if(1==1)
+    {
+        if(k==61)
+        {
+            k=3;
+        }
+        k=2;
+    }
+*/
 
+for(i=0; i<10; i++)
+{
+    printf("\nHOLA");
+    k=i;
+}
 
 /*
     printf("\nAltura: ");
