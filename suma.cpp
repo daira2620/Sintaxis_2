@@ -1,59 +1,49 @@
 #include <stdio.h>
 #include <math.h>
 #include <iostream>
-//
-char altura, i, j, k;
+
+char altura,i,j,k;
+//int b;
 
 void main() // Funcion principal
+
 {
-    // k = (int)(10);
-    //k = 1.5;
-    // k = (int)((char)(1.5));
+   // k = (int)(10);
+   // k = 1.5;
+   // k = (char)(1.5);
+
+   printf("\nAltura: ");
+    scanf("&i",&altura);
 
 /*
-    k=(3+5)*8-(10-4)/2; //61
-    if(1==1)
-    {
-        if(k==61)
-        {
-            k=3;
-        }
-        k=2;
-    }
-*/
-
-for(i=0; i<10; i++)
-{
-    printf("\nHOLA");
-    k=i;
-}
-
-/*
-    printf("\nAltura: ");
-    scanf("&i", &altura);
-
     printf("\nfor:\n");
     for (i = 1; i <= altura; i++)
     {
-        for (j = 250; j < 250 + i; j++)
+        printf("+");
+        for (j = 250; j < 250+i; j++)
+    
         {
-            if (j % 2 == 0)
+            if (j%2==0)
                 printf("-");
             else
                 printf("+");
         }
+       
         printf("\n");
     }
+ /*
+ */
     printf("\nwhile:\n");
-    i = 1;
-    while ( i <= altura )
-
+    //i = 1;
+    while (  altura  >= 10)
     {
+        printf("-");
+            printf("\n");
+        /*
         j = 250;
-        while ( j < 250 + i )
-
+        while ( j < 250+i )
         {
-            if (j % 2 == 0)
+            if (j%2==0)
                 printf("-");
             else
                 printf("+");
@@ -65,18 +55,23 @@ for(i=0; i<10; i++)
     printf("\ndo:\n");
     i = 1;
     do
+
     {
         j = 250;
         do
         {
-            if (j % 2 == 0)
+            if (j%2==0)
                 printf("-");
             else
                 printf("+");
             j++;
-        } while ( j < 250 + i );
-        i++;
+        }while ( j < 250+i );
+
+                i++;
+
         printf("\n");
-    } while ( i <= altura );
-    */
+        
+    }while ( i <= altura );
+*/
+}
 }

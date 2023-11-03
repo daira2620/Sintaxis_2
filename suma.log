@@ -1,23 +1,11 @@
 Autor: Daira Judith Servin Juárez 
-Fecha: 18/10/2023 01:40:26 p. m.
-i =  0 = 0
-For: i
- 10k =  = 0
- 10k =  = 1
- 10k =  = 2
- 10k =  = 3
- 10k =  = 4
- 10k =  = 5
- 10k =  = 6
- 10k =  = 7
- 10k =  = 8
- 10k =  = 9
- 10k =  = 10
------------------
+Fecha: 03/11/2023 12:09:18 a. m.
+While: while
+ 10-----------------
 V a r i a b l e s
 -----------------
-altura Char = 0
-i Char = 10
+altura Char = 5
+i Char = 0
 j Char = 0
-k Char = 9
+k Char = 0
 -----------------
