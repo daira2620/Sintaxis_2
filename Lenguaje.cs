@@ -309,10 +309,10 @@ namespace Sintaxis_2
                     match("+=");
                     Expresion(primeraVez);
                     //resultado = stack.Pop();//
-                 
                     resultado += stack.Pop();
                     if(primeraVez){
                     asm.WriteLine("POP AX");
+                    asm.WriteLine("ADD"+ variable+",AX");
                     }
                 }
                 else if (getContenido() == "-=")
@@ -323,6 +323,7 @@ namespace Sintaxis_2
                     resultado -= stack.Pop();
                     if(primeraVez){
                     asm.WriteLine("POP AX");
+                    asm.WriteLine("SUB"+ variable+",AX");
                     }
                 }
                 else if (getContenido() == "*=")
@@ -332,7 +333,10 @@ namespace Sintaxis_2
                     //resultado = stack.Pop();//
                     resultado *= stack.Pop();
                     if(primeraVez){
-                    asm.WriteLine("POP AX");
+                    asm.WriteLine("POP BX");
+                    asm.WriteLine("MOV AX,"+ variable);
+                    asm.WriteLine("MUL BX");
+                    asm.WriteLine("MOV"+ variable+"AX");
                     }
                 }
                 else if (getContenido() == "/=")
@@ -343,6 +347,9 @@ namespace Sintaxis_2
                     resultado /= stack.Pop();
                     if(primeraVez){
                     asm.WriteLine("POP AX");
+                    asm.WriteLine("MOV AX,"+ variable);
+                    asm.WriteLine("DIV BX");
+                    asm.WriteLine("MOV"+ variable+", AX");
                     }
                 }
                 else if (getContenido() == "%=")
@@ -352,7 +359,10 @@ namespace Sintaxis_2
                     //resultado = stack.Pop();//
                     resultado %= stack.Pop();
                     if(primeraVez){
-                    asm.WriteLine("POP AX");
+                    asm.WriteLine("POP BX");
+                    asm.WriteLine("MOV AX"+ variable);
+                    asm.WriteLine("DIV BX");
+                    asm.WriteLine("MOV"+ variable+",DX");
                     }
                 }
             }
@@ -705,24 +715,26 @@ namespace Sintaxis_2
             if (ejecuta)
             {
 
-                string comentario = getContenido();
-                comentario = comentario.Replace("\\n", "\n");
+
+
+                string comentario = getContenido().TrimStart('"');
+                string nuevocomentario=comentario;//
+                comentario=comentario.Remove(comentario.Length -1 );//
+                nuevocomentario=comentario.Remove(nuevocomentario.Length -1 );//
+                
+                comentario = comentario.Replace(@"\n", "\n");
+                nuevocomentario=nuevocomentario.Replace(@"\n", "'\nprintn ' '\nprint '");//
                 comentario = comentario.Replace("\\t", " \t");
                 comentario = comentario.Replace("\"", "");
                 Console.Write(comentario);
+
+                if(primeraVez)
+                {
+                  asm.WriteLine("print ' "+nuevocomentario+ "'");//
+                }
             }
 
-           /*
-           hay que descomentar esto recuerda 
-             if(ejecuta==false)
-           {
-                string comen = getContenido();
-                comen = comentario.Replace( "\\n","printf");
-                comen = comentario.Replace("\\t", " \t");
-                comen = comentario.Replace("\"", "");
-                Console.Write(comen);
-           }
-           */
+          
 
             match(Tipos.Cadena);
             if (getContenido() == ",")
@@ -733,7 +745,24 @@ namespace Sintaxis_2
                     throw new Error("de sintaxis, la variable <" + getContenido() + "> no está declarada", log, linea, columna);
                 }
 
+               if(ejecuta)
+               {
+                if(primeraVez)
+               {
+                asm.WriteLine("MOV AX, "+ getContenido());
+                asm.WriteLine("CALL print_num");
+                asm.WriteLine("PRINTN ''");
+                //asm.WriteLine("CALL print_string"); 
+               }
                 Console.Write(" " + getValor(getContenido()));
+               }
+               else 
+               {
+                asm.WriteLine("call scan_num");
+                asm.WriteLine("MOV AX,CX");
+                asm.WriteLine("printn");
+               }
+
                 match(Tipos.Identificador);
             }
            
@@ -761,14 +790,13 @@ namespace Sintaxis_2
            
             if (ejecuta)
             {
-              //aqui agregue 
+             
             if(primeraVez){
               asm.WriteLine("call scan_num");
               asm.WriteLine("MOV AX, CX");
-              asm.WriteLine("printn");//
+              asm.WriteLine("printn");
             }
             
-              //blah 
                 string captura = " " + Console.ReadLine();
                 float resultado = float.Parse(captura);
                 Modifica(variable, resultado);
@@ -795,7 +823,7 @@ namespace Sintaxis_2
             {
               asm.WriteLine("call scan_num");
               asm.WriteLine("MOV AX, CX");
-               asm.WriteLine("printn");//
+              asm.WriteLine("printn");//
             }
             match(")");
             match(";");
@@ -980,9 +1008,16 @@ namespace Sintaxis_2
             if (tipoDato == Variable.TiposDatos.Char)
             {
                 if (resultado % 1 > 0)
-
-                    resultado = (float)Math.Round(resultado);
+               {
+                resultado = (float)Math.Round(resultado);
                 resultado = (char)resultado % 256;
+                asm.WriteLine("MOV AX, "+resultado);//
+                asm.WriteLine("MOV BX, "+256);//
+                asm.WriteLine("DIV BX");//
+                asm.WriteLine("MOV AX,DX ");//
+                asm.WriteLine("PUSH AX");//
+
+               }
 
             }
 
