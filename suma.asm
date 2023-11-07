@@ -1,5 +1,3 @@
-; Autor: Daira Judith Servin Juárez 
- ; Fecha: 07/11/2023 12:30:59 a. m.
 include 'emu8086.inc'
 org 100h
 print '' 
@@ -99,8 +97,7 @@ print ''
 MOV AX, 1
 PUSH AX
 POP AX
-; Asignacion i
-MOV i, AX
+ADDi,AX
 ; While: 1
 InicioWhile1:
 MOV AX, i
@@ -165,11 +162,6 @@ printn ' '
 print ''
 JMP InicioWhile1
 FinWhile1:
-; While: 3
-; While: 4
-; While: 5
-; While: 6
-; While: 7
 print '' 
 print ''
 printn ' ' 
@@ -188,7 +180,7 @@ POP AX
 ; Asignacion j
 MOV j, AX
 InicioDo2:
-; if: 87
+; if: 47
 MOV AX, j
 PUSH AX
 MOV AX, 2
@@ -202,15 +194,15 @@ PUSH AX
 POP BX
 POP AX
 CMP AX,BX
-JNE Eif87
+JNE Eif47
 print '' 
 print '-'
 ; else: 3
-JMP Eelse89
-Eif87:
+JMP Eelse49
+Eif47:
 print '' 
 print '+'
-Eelse89:
+Eelse49:
 INC  j
 MOV AX, j
 PUSH AX

@@ -13,7 +13,6 @@ void main() // Funcion principal
     // k = 1.5;
      //k = (int)((char)(1.5));
 
-    //PARA COMPROBAR EL USO DEL FOR , WHILE Y DO WHILE (PRUEBA DE FUEGO)/
     printf("\nAltura: ");
     scanf("&i",&altura);
 
@@ -31,7 +30,7 @@ void main() // Funcion principal
     }
     
     printf("\nwhile:\n");
-    i = 1;
+    i += 1; //i = 1;
     while ( i <= altura)
     {
         j = 250;
