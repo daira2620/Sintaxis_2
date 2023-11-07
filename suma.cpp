@@ -1,47 +1,41 @@
 #include <stdio.h>
 #include <math.h>
 #include <iostream>
-
 char altura,i,j,k;
-//int b;
+int m;
+int p;
 
+float b;
+ 
 void main() // Funcion principal
-
 {
-   // k = (int)(10);
-   // k = 1.5;
-   // k = (char)(1.5);
+    //k = (int)(10);
+    // k = 1.5;
+     //k = (int)((char)(1.5));
 
-   printf("\nAltura: ");
+    //PARA COMPROBAR EL USO DEL FOR , WHILE Y DO WHILE (PRUEBA DE FUEGO)/
+    printf("\nAltura: ");
     scanf("&i",&altura);
 
-/*
     printf("\nfor:\n");
     for (i = 1; i <= altura; i++)
     {
-        printf("+");
         for (j = 250; j < 250+i; j++)
-    
         {
             if (j%2==0)
                 printf("-");
             else
                 printf("+");
         }
-       
         printf("\n");
     }
- /*
- */
+    
     printf("\nwhile:\n");
-    //i = 1;
-    while (  altura  >= 10)
+    i = 1;
+    while ( i <= altura)
     {
-        printf("-");
-            printf("\n");
-        /*
         j = 250;
-        while ( j < 250+i )
+        while ( j < 250+i)
         {
             if (j%2==0)
                 printf("-");
@@ -52,10 +46,10 @@ void main() // Funcion principal
         i++;
         printf("\n");
     }
-    printf("\ndo:\n");
-    i = 1;
-    do
 
+    printf("\ndo:\n");
+     i=1;
+     do
     {
         j = 250;
         do
@@ -65,13 +59,8 @@ void main() // Funcion principal
             else
                 printf("+");
             j++;
-        }while ( j < 250+i );
-
-                i++;
-
+        }   while (j < 250+i);
+        i++;
         printf("\n");
-        
-    }while ( i <= altura );
-*/
-}
+    } while (i <= altura);
 }
