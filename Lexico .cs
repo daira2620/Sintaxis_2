@@ -72,7 +72,8 @@ namespace Sintaxis_2
             asm.AutoFlush = true;
             log.WriteLine("Autor: Daira Judith Servin Juarez ");
             log.WriteLine(thisDay.ToString("F"));
-            
+            asm.WriteLine(";Autor: Daira Judith Servin Juarez ");
+            asm.WriteLine(";Fecha "+thisDay.ToString("F"));
            
             if (File.Exists("prueba.cpp"))
             {
@@ -92,7 +93,8 @@ namespace Sintaxis_2
             asm.AutoFlush = true;
             log.WriteLine("Autor: Daira Judith Servin Juarez ");
             log.WriteLine(thisDay.ToString("F"));
-            
+            asm.WriteLine(";Autor: Daira Judith Servin Juarez ");
+            asm.WriteLine(";Fecha "+thisDay.ToString("F"));
             if (Path.GetExtension(nombre) != ".cpp")
             {
                 throw new Error("El archivo " + nombre + " no tiene extension CPP", log, linea, columna);
